@@ -47,33 +47,68 @@
     <section>
       <div class="bg-[#F8F8F8] py-28">
         <div class="container mx-auto px-4 md:px-0">
-          <div class="shopWrapper flex flex-col md:flex-row">
+          <div class="shopWrapper flex flex-col items-center justify-center md:items-start md:flex-row  gap-6">
             <!-- all shop product item left side  -->
             <div class="allShopItem">
               <!-- product kitcheware section -->
               <div class="kitchenwareWrap">
-                <div class="kitchenwareTitle">
-                  <h1>Kitchenware</h1>
+                <div class="kitchenwareTitle mb-8">
+                  <h1 class="text-4xl font-semibold">Kitchenware</h1>
                 </div>
-                <div class="kitchenwareProductWrap">
+                <div class="kitchenwareProductWrap grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                   <!-- kitchenware single product  -->
-                  <div class="kitchenwareSP">
-                    <img src="./images/prod1.png" alt="product1" class="w-full" />
-                    <div class="review">
+                  <div class="kitchenwareSP w-full sm:w-[342px] bg-white rounded-lg p-5">
+                    <div
+                      class="kitchenwareImg bg-[#EAEAEA] w-full h-[202px] flex justify-center items-center py-8 rounded-lg mb-5">
+                      <img src="./images/prod1.png" alt="product1" class="w-28" />
+                    </div>
+                    <div class="review flex gap-1 justify-center items-center">
                       <img src="./images/fullstart.svg" />
                       <img src="./images/fullstart.svg" />
                       <img src="./images/fullstart.svg" />
                       <img src="./images/emptystart.svg" />
                       <img src="./images/emptystart.svg" />
                     </div>
-                    <p class="productName">K. Accessories</p>
-                    <p class="productPrice">39.00 TK</p>
+                    <p class="productName text-[20px] font-semibold py-2 text-center">K. Accessories</p>
+                    <p class="productPrice text-[20px] text-[#838383] text-center">39.00 TK</p>
+                  </div>
+                  <!-- kitchenware single product  -->
+                  <div class="kitchenwareSP w-full sm:w-[342px] bg-white rounded-lg p-5">
+                    <div
+                      class="kitchenwareImg bg-[#EAEAEA] w-full h-[202px] flex justify-center items-center py-8 rounded-lg mb-5">
+                      <img src="./images/prod2.png" alt="product2" class="w-32" />
+                    </div>
+                    <div class="review flex gap-1 justify-center items-center">
+                      <img src="./images/emptystart.svg" />
+                      <img src="./images/emptystart.svg" />
+                      <img src="./images/emptystart.svg" />
+                      <img src="./images/emptystart.svg" />
+                      <img src="./images/emptystart.svg" />
+                    </div>
+                    <p class="productName text-[20px] font-semibold py-2 text-center">K. Accessories</p>
+                    <p class="productPrice text-[20px] text-[#838383] text-center">25.00 TK</p>
+                  </div>
+                  <!-- kitchenware single product  -->
+                  <div class="kitchenwareSP w-full sm:w-[342px] bg-white rounded-lg p-5">
+                    <div
+                      class="kitchenwareImg bg-[#EAEAEA] w-full h-[202px] flex justify-center items-center py-8 rounded-lg mb-5">
+                      <img src="./images/prod3.png" alt="product3" class="w-32" />
+                    </div>
+                    <div class="review flex gap-1 justify-center items-center">
+                      <img src="./images/fullstart.svg" />
+                      <img src="./images/fullstart.svg" />
+                      <img src="./images/fullstart.svg" />
+                      <img src="./images/fullstart.svg" />
+                      <img src="./images/emptystart.svg" />
+                    </div>
+                    <p class="productName text-[20px] font-semibold py-2 text-center">Home Cooker</p>
+                    <p class="productPrice text-[20px] text-[#838383] text-center">49.00 TK</p>
                   </div>
                 </div>
               </div>
             </div>
             <!-- shop cart section right side -->
-            <div class="shopCart w-full sm:w-[342px]">
+            <div class="shopCart w-full sm:w-[342px] mt-[72px]">
               <div class="couponBox bg-white rounded-lg p-6 mb-6">
                 <h1 class="text-2xl font-medium">Have coupon?</h1>
                 <div class="couponBoxInput mt-4 flex justify-center overflow-hidden">
