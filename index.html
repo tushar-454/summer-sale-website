@@ -45,9 +45,9 @@
   <main>
     <!-- main shop section start  -->
     <section>
-      <div class="bg-[#F8F8F8]">
+      <div class="bg-[#F8F8F8] py-28">
         <div class="container mx-auto px-4 md:px-0">
-          <div class="shopWrapper">
+          <div class="shopWrapper flex flex-col md:flex-row">
             <!-- all shop product item left side  -->
             <div class="allShopItem">
               <!-- product kitcheware section -->
@@ -73,29 +73,33 @@
               </div>
             </div>
             <!-- shop cart section right side -->
-            <div class="shopCart">
-              <div class="couponBox">
-                <h1>Have coupon?</h1>
-                <div class="couponBoxInput">
-                  <input type="text" /><button>Apply</button>
+            <div class="shopCart w-full sm:w-[342px]">
+              <div class="couponBox bg-white rounded-lg p-6 mb-6">
+                <h1 class="text-2xl font-medium">Have coupon?</h1>
+                <div class="couponBoxInput mt-4 flex justify-center overflow-hidden">
+                  <input type="text" placeholder="SNOW20"
+                    class="bg-white w-full text-[20px] rounded-lg border border-[#D3D3D3] p-2 -mr-4" /><button
+                    class="text-[20px] font-semibold bg-[#E527B2] text-white rounded-tr-lg rounded-br-lg p-4 cursor-pointer">Apply</button>
                 </div>
               </div>
-              <div class="cartDetailsBox">
+              <div class="cartDetailsBox bg-white rounded-lg p-6 mb-6">
                 <div class="itemList">
-                  <ol>
-                    <li>Home cooker</li>
-                    <li>Sport cates</li>
-                    <li>Home cooker</li>
+                  <ol class="text-2xl font-medium leading-10">
+                    <li>1. Home cooker</li>
+                    <li>2. Sport cates</li>
+                    <li>3. Home cooker</li>
                   </ol>
                 </div>
-                <hr />
-                <div class="cartCalcBox">
-                  <p>Total price: <span>257.00</span>TK</p>
-                  <p>Discount: <span>257.00</span>TK</p>
-                  <p>Total: <span>257.00</span>TK</p>
+                <hr class="bg-[#D3D3D3] my-4" />
+                <div class="cartCalcBox text-2xl font-medium leading-10">
+                  <p>Total price: <span class="text-[#838383]">257.00</span><span class="text-[#838383]">TK</span></p>
+                  <p>Discount: <span class="text-[#838383]">257.00</span><span class="text-[#838383]">TK</span></p>
+                  <p>Total: <span class="text-[#838383]">257.00</span><span class="text-[#838383]">TK</span></p>
                 </div>
-                <hr />
-                <button class="purchaseBtn">Make Purchase</button>
+                <hr class="bg-[#D3D3D3] my-4" />
+                <button
+                  class="purchaseBtn w-full text-[20px] font-semibold bg-[#E527B2] text-white rounded-lg p-4 cursor-pointer">Make
+                  Purchase</button>
               </div>
             </div>
           </div>
