@@ -15,8 +15,8 @@ for (const product of products) {
       .innerText.split(' ')[0];
     const productPrice = parseFloat(getPriceStr);
     //set product price in cart one by one when use click
-    const totalPriceStr = totalPriceEle.innerText;
-    const totalPrice = parseFloat(totalPriceStr);
+    let totalPriceStr = totalPriceEle.innerText;
+    let totalPrice = parseFloat(totalPriceStr);
     totalPriceEle.innerText = (totalPrice + productPrice).toFixed(2);
     // get product name
     const listBox = document.getElementById('listBox');
@@ -24,6 +24,8 @@ for (const product of products) {
     listBox.innerHTML += `<li>${serial}. ${productName}</li>`;
     serial++;
     // apply and purchase button disabled enable condition
+    totalPriceStr = totalPriceEle.innerText;
+    totalPrice = parseFloat(totalPriceStr);
     if (totalPrice > 200) {
       applyBtn.classList.remove('disabled');
       applyBtn.removeAttribute('disabled');
