@@ -1,7 +1,8 @@
 // product click and add price name in cart
 const products = document.querySelectorAll('.product');
 let serial = 1;
-
+// get total price
+const totalPriceEle = document.getElementById('totalPrice');
 // apply and purchase button veriable
 const applyBtn = document.getElementById('applyBtn');
 const purchaseBtn = document.querySelector('.purchaseBtn');
@@ -14,7 +15,6 @@ for (const product of products) {
       .innerText.split(' ')[0];
     const productPrice = parseFloat(getPriceStr);
     //set product price in cart one by one when use click
-    const totalPriceEle = document.getElementById('totalPrice');
     const totalPriceStr = totalPriceEle.innerText;
     const totalPrice = parseFloat(totalPriceStr);
     totalPriceEle.innerText = (totalPrice + productPrice).toFixed(2);
@@ -40,17 +40,30 @@ for (const product of products) {
   });
 }
 
-//click apply button discount and total calc again
 const couponBox = document.querySelector('.couponBox');
 const couponInput = document.getElementById('couponInput');
 const error = document.querySelector('.error');
-couponInput.addEventListener('keyup', function () {
+// apply button click and discount calc
+applyBtn.addEventListener('click', function () {
   if (couponInput.value === '') {
     error.innerText = 'Give a Coupon!';
+    return;
   } else if (couponInput.value !== 'SELL200') {
     error.innerText = 'Wrong Coupon!';
+    return;
   } else {
     error.innerText = '';
+    const totalPriceStr = totalPriceEle.innerText;
+    const totalPrice = parseFloat(totalPriceStr);
+    const discountEle = document.getElementById('discountShow');
+    const finalTotal = document.getElementById('finalTotal');
+    const discountTk = (totalPrice * 20) / 100;
+    discountEle.innerText = discountTk.toFixed(2);
+    finalTotal.innerText = (totalPrice - discountTk).toFixed(2);
+    couponInput.innerText = '';
+    applyBtn.classList.add('disabled');
+    applyBtn.setAttribute('disabled', 'ture');
+    couponInput.setAttribute('disabled', 'true');
   }
 });
 
