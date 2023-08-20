@@ -27,7 +27,7 @@ for (const product of products) {
     // coupon apply and purchase button disabled enable condition
     totalPriceStr = totalPriceEle.innerText;
     totalPrice = parseFloat(totalPriceStr);
-    if (totalPrice > 200) {
+    if (totalPrice >= 200) {
       applyBtn.classList.remove('disabled');
       applyBtn.removeAttribute('disabled');
       couponInput.removeAttribute('disabled');
