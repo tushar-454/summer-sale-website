@@ -70,9 +70,7 @@ applyBtn.addEventListener('click', function () {
 const gotoHome = document.getElementById('gotoHome');
 gotoHome.addEventListener('click', function () {
   totalPriceEle.innerText = '0.00';
-  for (const li of listBox.querySelectorAll('li')) {
-    li.remove();
-  }
+  listBox.innerHTML = '';
   totalPriceEle.innerText = '0.00';
   discountEle.innerText = '0.00';
   finalTotal.innerText = '0.00';
