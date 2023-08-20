@@ -27,6 +27,7 @@ for (const product of products) {
     if (totalPrice > 200) {
       applyBtn.classList.remove('disabled');
       applyBtn.removeAttribute('disabled');
+      couponInput.removeAttribute('disabled');
     } else {
       applyBtn.classList.add('disabled');
     }
@@ -38,6 +39,20 @@ for (const product of products) {
     }
   });
 }
+
+//click apply button discount and total calc again
+const couponBox = document.querySelector('.couponBox');
+const couponInput = document.getElementById('couponInput');
+const error = document.querySelector('.error');
+couponInput.addEventListener('keyup', function () {
+  if (couponInput.value === '') {
+    error.innerText = 'Give a Coupon!';
+  } else if (couponInput.value !== 'SELL200') {
+    error.innerText = 'Wrong Coupon!';
+  } else {
+    error.innerText = '';
+  }
+});
 
 // apply and purchase button disabled class by default added
 applyBtn.classList.add('disabled');

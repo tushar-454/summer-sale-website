@@ -230,11 +230,13 @@
               <div class="couponBox bg-white rounded-lg p-6 mb-6">
                 <h1 class="text-2xl font-medium">Have coupon?</h1>
                 <div class="couponBoxInput mt-4 flex justify-center overflow-hidden">
-                  <input type="text" placeholder="SNOW20"
-                    class="bg-white w-full text-[20px] rounded-lg outline-none border border-[#D3D3D3] p-2 -mr-4" /><button
+                  <input type="text" placeholder="SNOW20" id="couponInput"
+                    class="bg-white w-full text-[20px] rounded-lg outline-none border border-[#D3D3D3] p-2 -mr-4"
+                    disabled /><button
                     class="text-[20px] font-semibold bg-[#E527B2] text-white rounded-tr-lg rounded-br-lg p-4 cursor-pointer"
                     id="applyBtn" disabled>Apply</button>
                 </div>
+                <p class="error text-red-600 mt-4"></p>
               </div>
               <div class="cartDetailsBox bg-white rounded-lg p-6 mb-6">
                 <div class="itemList">
