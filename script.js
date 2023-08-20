@@ -1,4 +1,3 @@
-// product click and add price name in cart
 const products = document.querySelectorAll('.product');
 let serial = 1;
 // get total price
@@ -10,13 +9,14 @@ const purchaseBtn = document.querySelector('.purchaseBtn');
 const listBox = document.getElementById('listBox');
 
 for (const product of products) {
+  // product click and add price name in cart
   product.addEventListener('click', function () {
     //get product price
     const getPriceStr = product
       .querySelector('.productPrice')
       .innerText.split(' ')[0];
     const productPrice = parseFloat(getPriceStr);
-    //set product price in cart one by one when use click
+    //set product price in cart one by one when user click any product
     let totalPriceStr = totalPriceEle.innerText;
     let totalPrice = parseFloat(totalPriceStr);
     totalPriceEle.innerText = (totalPrice + productPrice).toFixed(2);
@@ -24,21 +24,17 @@ for (const product of products) {
     const productName = product.querySelector('.productName').innerText;
     listBox.innerHTML += `<li>${serial}. ${productName}</li>`;
     serial++;
-    // apply and purchase button disabled enable condition
+    // coupon apply and purchase button disabled enable condition
     totalPriceStr = totalPriceEle.innerText;
     totalPrice = parseFloat(totalPriceStr);
     if (totalPrice > 200) {
       applyBtn.classList.remove('disabled');
       applyBtn.removeAttribute('disabled');
       couponInput.removeAttribute('disabled');
-    } else {
-      applyBtn.classList.add('disabled');
     }
     if (totalPrice > 0) {
       purchaseBtn.classList.remove('disabled');
       purchaseBtn.removeAttribute('disabled');
-    } else {
-      purchaseBtn.classList.add('disabled');
     }
   });
 }
@@ -70,10 +66,6 @@ applyBtn.addEventListener('click', function () {
   }
 });
 
-// apply and purchase button disabled class by default added
-applyBtn.classList.add('disabled');
-purchaseBtn.classList.add('disabled');
-
 // click go to home then clean all data
 const gotoHome = document.getElementById('gotoHome');
 gotoHome.addEventListener('click', function () {
@@ -87,5 +79,12 @@ gotoHome.addEventListener('click', function () {
   couponInput.value = '';
   purchaseBtn.classList.add('disabled');
   purchaseBtn.setAttribute('disabled', 'ture');
+  applyBtn.setAttribute('disabled', 'ture');
+  couponInput.setAttribute('disabled', 'true');
+  applyBtn.classList.add('disabled');
   serial = 1;
 });
+
+// apply and purchase button disabled class by default added
+applyBtn.classList.add('disabled');
+purchaseBtn.classList.add('disabled');
