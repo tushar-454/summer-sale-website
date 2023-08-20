@@ -7,6 +7,8 @@ const totalPriceEle = document.getElementById('totalPrice');
 const applyBtn = document.getElementById('applyBtn');
 const purchaseBtn = document.querySelector('.purchaseBtn');
 
+const listBox = document.getElementById('listBox');
+
 for (const product of products) {
   product.addEventListener('click', function () {
     //get product price
@@ -19,7 +21,6 @@ for (const product of products) {
     let totalPrice = parseFloat(totalPriceStr);
     totalPriceEle.innerText = (totalPrice + productPrice).toFixed(2);
     // get product name
-    const listBox = document.getElementById('listBox');
     const productName = product.querySelector('.productName').innerText;
     listBox.innerHTML += `<li>${serial}. ${productName}</li>`;
     serial++;
@@ -46,6 +47,8 @@ const couponBox = document.querySelector('.couponBox');
 const couponInput = document.getElementById('couponInput');
 const error = document.querySelector('.error');
 // apply button click and discount calc
+const discountEle = document.getElementById('discountShow');
+const finalTotal = document.getElementById('finalTotal');
 applyBtn.addEventListener('click', function () {
   if (couponInput.value === '') {
     error.innerText = 'Give a Coupon!';
@@ -57,8 +60,6 @@ applyBtn.addEventListener('click', function () {
     error.innerText = '';
     const totalPriceStr = totalPriceEle.innerText;
     const totalPrice = parseFloat(totalPriceStr);
-    const discountEle = document.getElementById('discountShow');
-    const finalTotal = document.getElementById('finalTotal');
     const discountTk = (totalPrice * 20) / 100;
     discountEle.innerText = discountTk.toFixed(2);
     finalTotal.innerText = (totalPrice - discountTk).toFixed(2);
@@ -76,5 +77,15 @@ purchaseBtn.classList.add('disabled');
 // click go to home then clean all data
 const gotoHome = document.getElementById('gotoHome');
 gotoHome.addEventListener('click', function () {
-  window.location.href = 'index.html';
+  totalPriceEle.innerText = '0.00';
+  for (const li of listBox.querySelectorAll('li')) {
+    li.remove();
+  }
+  totalPriceEle.innerText = '0.00';
+  discountEle.innerText = '0.00';
+  finalTotal.innerText = '0.00';
+  couponInput.value = '';
+  purchaseBtn.classList.add('disabled');
+  purchaseBtn.setAttribute('disabled', 'ture');
+  serial = 1;
 });
